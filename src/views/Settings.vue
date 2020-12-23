@@ -1,5 +1,7 @@
 <template>
-	<div>HELLO FROM HOME</div>
+	<div>
+		HELLO FROM SETTINGS
+	</div>
 </template>
 
 <script lang="ts">
