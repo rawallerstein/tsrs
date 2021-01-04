@@ -1,0 +1,2 @@
+Store files longer than 100 lines should be considered for extraction
+Store files longer than 300 lines MUST be extracted

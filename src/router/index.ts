@@ -1,12 +1,13 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+
+import Bank from '../views/Bank.vue'
 import Home from '../views/Home.vue'
 import Profile from '../views/Profile.vue'
-import Settings from '../views/Settings.vue'
 
 const routes: Array<RouteRecordRaw> = [
 	{ path: '/', name: 'Home', component: Home },
-	{ path: '/profile', name: 'Profile', component: Profile },
-	{ path: '/settings', name: 'Settings', component: Settings }
+	{ path: '/bank', name: 'Bank', component: Bank },
+	{ path: '/profile', name: 'Profile', component: Profile }
 ]
 
 const router = createRouter({

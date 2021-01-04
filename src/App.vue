@@ -7,8 +7,8 @@
 				mode="horizontal"
 			>
 				<el-menu-item index="/">Home</el-menu-item>
+				<el-menu-item index="/bank">Bank</el-menu-item>
 				<el-menu-item index="/profile">Profile</el-menu-item>
-				<el-menu-item index="/settings">Settings</el-menu-item>
 			</el-menu>
 		</el-header>
 
