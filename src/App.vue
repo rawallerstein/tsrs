@@ -2,12 +2,22 @@
 	<el-container class="fluid">
 		<el-header>
 			<el-menu
-				:default-active="route.currentRoute.path"
+				:default-active="Router.currentRoute.path"
 				router
 				mode="horizontal"
 			>
 				<el-menu-item index="/">Home</el-menu-item>
-				<el-menu-item index="/bank">Bank</el-menu-item>
+				<el-submenu index="/bank">
+					<template #title>
+						Bank
+					</template>
+					<el-menu-item
+						v-for="key of Object.keys(playerBank)"
+						:key="key"
+						:index="`/bank#${key}`"
+						>{{ titleCase(key) }}</el-menu-item
+					>
+				</el-submenu>
 				<el-menu-item index="/profile">Profile</el-menu-item>
 			</el-menu>
 		</el-header>
@@ -18,22 +28,33 @@
 	</el-container>
 </template>
 
-<script>
-import { reactive, toRefs } from 'vue'
-import route from './router'
-export default {
+<script lang="ts">
+import { reactive, toRefs, MethodOptions, defineComponent } from 'vue'
+
+import Router from './router'
+import Utils from './utils'
+import { globalState } from './store/index'
+
+export default defineComponent({
 	name: 'App',
 	setup() {
+		const { playerBank } = globalState
+		const { titleCase } = Utils
 		const state = reactive({
 			menu: true,
-			route
+			playerBank,
+			Router
 		})
 
+		const methods: MethodOptions = {
+			titleCase
+		}
 		return {
-			...toRefs(state)
+			...toRefs(state),
+			...methods
 		}
 	}
-}
+})
 </script>
 
 <style lang="scss" scoped></style>
@@ -55,5 +76,13 @@ body {
 	font-family: Avenir, Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.d-flex {
+	display: flex !important;
+}
+
+.ma-0 {
+	margin: 0 !important;
 }
 </style>

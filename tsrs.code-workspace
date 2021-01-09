@@ -2,11 +2,12 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "../tsrs-express"
 		}
 	],
 	"settings": {
-		"conventionalCommits.scopes": [
-			"Bank"
-		]
+		"conventionalCommits.scopes": ["Bank"]
 	}
 }

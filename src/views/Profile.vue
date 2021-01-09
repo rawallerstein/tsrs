@@ -2,6 +2,9 @@
 	<el-form v-model="playerProfile">
 		<el-form-item label="Username">
 			<el-input v-model="playerProfile.username" />
+			<span v-if="!isValidUsername" class="error-message"
+				>That username is not valid!</span
+			>
 		</el-form-item>
 		<el-form-item
 			v-for="[name, skill] of Object.entries(playerProfile.skills)"
@@ -27,19 +30,30 @@
 			></el-input-number>
 		</el-form-item>
 		<el-form-item>
-			<el-tooltip content="Requires Username" placement="top" effect="light">
-				<el-button type="success" @click="pullPlayer">Pull Data</el-button>
-			</el-tooltip>
-			<el-button type="primary" @click="setPlayerProfile(playerProfile)"
-				>Save</el-button
+			<el-row>
+				<el-button
+					type="success"
+					:disabled="!isValidUsername"
+					@click="pullPlayer"
+					>Pull Data</el-button
+				>
+				<el-button type="primary" @click="setPlayerProfile(playerProfile)"
+					>Save</el-button
+				>
+			</el-row>
+			<span v-if="!isValidUsername" class="error-message"
+				>Invalid username!</span
+			>
+			<span v-if="!playerProfile.username" class="error-message"
+				>Username required!</span
 			>
 		</el-form-item>
 	</el-form>
 </template>
 
 <script lang="ts">
-import { defineComponent, MethodOptions } from 'vue'
-import { convertLVLtoXP, convertXPtoLVL } from 'oldschooljs/dist/util'
+import { computed, defineComponent, MethodOptions } from 'vue'
+import { Util as OSUtils } from 'oldschooljs'
 import { SkillScore, SkillsScore } from 'oldschooljs/dist/meta/types'
 
 import { globalMutations, globalState } from '../store/index'
@@ -48,6 +62,10 @@ export default defineComponent({
 	setup() {
 		const { setPlayerProfile } = globalMutations
 		const { playerProfile } = globalState
+
+		const isValidUsername = computed(() => {
+			return OSUtils.isValidUsername(playerProfile.value.username)
+		})
 		function getOverallSkillValue(
 			type: 'level' | 'xp',
 			skills: SkillsScore
@@ -72,11 +90,12 @@ export default defineComponent({
 		): void {
 			if (type === 'level') {
 				skill.level = value
-				skill.xp = convertLVLtoXP(value)
+				skill.xp = OSUtils.convertLVLtoXP(value)
 			} else {
-				skill.level = convertXPtoLVL(value)
+				skill.level = OSUtils.convertXPtoLVL(value)
 				skill.xp = value
 			}
+
 			updateOverallSkill()
 		}
 
@@ -84,9 +103,13 @@ export default defineComponent({
 			updateSkill,
 			setPlayerProfile
 		}
-		return { ...methods, playerProfile }
+		return { ...methods, playerProfile, isValidUsername }
 	}
 })
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.error-message {
+	color: #f56c6c;
+}
+</style>

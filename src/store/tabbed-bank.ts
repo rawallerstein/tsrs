@@ -1,6 +1,9 @@
-class CurrencyTab {
+export class BankTab {
 	[index: number]: number | null
 	[index: string]: number | null
+}
+
+class CurrencyTab extends BankTab {
 	619: number | null = null
 	995: number | null = null
 	1464: number | null = null
@@ -25,9 +28,7 @@ class CurrencyTab {
 	22820: number | null = null
 }
 
-class FoodTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class FoodTab extends BankTab {
 	77: number | null = null
 	315: number | null = null
 	317: number | null = null
@@ -344,9 +345,7 @@ class FoodTab {
 	22835: number | null = null
 }
 
-class HerbloreItemsTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class HerbloreItemsTab extends BankTab {
 	199: number | null = null
 	201: number | null = null
 	203: number | null = null
@@ -430,9 +429,7 @@ class HerbloreItemsTab {
 	22402: number | null = null
 }
 
-class HerbloreSecondariesTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class HerbloreSecondariesTab extends BankTab {
 	221: number | null = null
 	223: number | null = null
 	225: number | null = null
@@ -466,9 +463,7 @@ class HerbloreSecondariesTab {
 	21975: number | null = null
 }
 
-class HerbsTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class HerbsTab extends BankTab {
 	199: number | null = null
 	201: number | null = null
 	203: number | null = null
@@ -516,9 +511,7 @@ class HerbsTab {
 	22402: number | null = null
 }
 
-class HolidayItemsTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class HolidayItemsTab extends BankTab {
 	795: number | null = null
 	962: number | null = null
 	981: number | null = null
@@ -669,9 +662,7 @@ class HolidayItemsTab {
 	23108: number | null = null
 }
 
-class LogsTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class LogsTab extends BankTab {
 	1511: number | null = null
 	1513: number | null = null
 	1515: number | null = null
@@ -710,9 +701,7 @@ class LogsTab {
 	21869: number | null = null
 }
 
-class MetalBarsTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class MetalBarsTab extends BankTab {
 	2349: number | null = null
 	2351: number | null = null
 	2355: number | null = null
@@ -728,9 +717,7 @@ class MetalBarsTab {
 	13354: number | null = null
 }
 
-class OresTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class OresTab extends BankTab {
 	436: number | null = null
 	438: number | null = null
 	440: number | null = null
@@ -752,9 +739,7 @@ class OresTab {
 	13356: number | null = null
 }
 
-class PotionsTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class PotionsTab extends BankTab {
 	91: number | null = null
 	93: number | null = null
 	95: number | null = null
@@ -1070,9 +1055,7 @@ class PotionsTab {
 	22470: number | null = null
 }
 
-class QuestItemsTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class QuestItemsTab extends BankTab {
 	0: number | null = null
 	1: number | null = null
 	3: number | null = null
@@ -2830,9 +2813,7 @@ class QuestItemsTab {
 	23082: number | null = null
 }
 
-class RandomEventRewardsTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class RandomEventRewardsTab extends BankTab {
 	2528: number | null = null
 	3057: number | null = null
 	3058: number | null = null
@@ -2860,9 +2841,7 @@ class RandomEventRewardsTab {
 	11640: number | null = null
 }
 
-class RunesTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class RunesTab extends BankTab {
 	554: number | null = null
 	555: number | null = null
 	556: number | null = null
@@ -2887,9 +2866,7 @@ class RunesTab {
 	21880: number | null = null
 }
 
-class SaplingsTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class SaplingsTab extends BankTab {
 	5370: number | null = null
 	5371: number | null = null
 	5372: number | null = null
@@ -2914,9 +2891,7 @@ class SaplingsTab {
 	22866: number | null = null
 }
 
-class SeedsTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class SeedsTab extends BankTab {
 	299: number | null = null
 	4001: number | null = null
 	4486: number | null = null
@@ -3009,9 +2984,7 @@ class SeedsTab {
 	22887: number | null = null
 }
 
-class ToolsTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class ToolsTab extends BankTab {
 	4: number | null = null
 	233: number | null = null
 	301: number | null = null
@@ -3092,9 +3065,7 @@ class ToolsTab {
 	23122: number | null = null
 }
 
-class TreasureTrailsRewardsTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class TreasureTrailsRewardsTab extends BankTab {
 	2583: number | null = null
 	2585: number | null = null
 	2589: number | null = null
@@ -3484,9 +3455,7 @@ class TreasureTrailsRewardsTab {
 	22675: number | null = null
 }
 
-class JewelleryTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class JewelleryTab extends BankTab {
 	295: number | null = null
 	552: number | null = null
 	589: number | null = null
@@ -3745,9 +3714,7 @@ class JewelleryTab {
 	22986: number | null = null
 }
 
-class WarmClothingTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class WarmClothingTab extends BankTab {
 	1037: number | null = null
 	1050: number | null = null
 	1387: number | null = null
@@ -3849,9 +3816,7 @@ class WarmClothingTab {
 	21314: number | null = null
 }
 
-class AmmunitionSlotItemsTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class AmmunitionSlotItemsTab extends BankTab {
 	78: number | null = null
 	598: number | null = null
 	825: number | null = null
@@ -4050,9 +4015,7 @@ class AmmunitionSlotItemsTab {
 	22947: number | null = null
 }
 
-class BodySlotItemsTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class BodySlotItemsTab extends BankTab {
 	75: number | null = null
 	284: number | null = null
 	426: number | null = null
@@ -4388,9 +4351,7 @@ class BodySlotItemsTab {
 	23097: number | null = null
 }
 
-class CapeSlotItemsTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class CapeSlotItemsTab extends BankTab {
 	1007: number | null = null
 	1019: number | null = null
 	1021: number | null = null
@@ -4660,9 +4621,7 @@ class CapeSlotItemsTab {
 	23099: number | null = null
 }
 
-class FeetSlotItemsTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class FeetSlotItemsTab extends BankTab {
 	88: number | null = null
 	89: number | null = null
 	626: number | null = null
@@ -4799,9 +4758,7 @@ class FeetSlotItemsTab {
 	23093: number | null = null
 }
 
-class HandSlotItemsTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class HandSlotItemsTab extends BankTab {
 	775: number | null = null
 	776: number | null = null
 	777: number | null = null
@@ -4962,9 +4919,7 @@ class HandSlotItemsTab {
 	23091: number | null = null
 }
 
-class HeadSlotItemsTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class HeadSlotItemsTab extends BankTab {
 	74: number | null = null
 	579: number | null = null
 	656: number | null = null
@@ -5583,9 +5538,7 @@ class HeadSlotItemsTab {
 	23101: number | null = null
 }
 
-class LegSlotItemsTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class LegSlotItemsTab extends BankTab {
 	285: number | null = null
 	428: number | null = null
 	538: number | null = null
@@ -5936,9 +5889,7 @@ class LegSlotItemsTab {
 	23095: number | null = null
 }
 
-class NeckSlotItemsTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class NeckSlotItemsTab extends BankTab {
 	86: number | null = null
 	87: number | null = null
 	295: number | null = null
@@ -6124,9 +6075,7 @@ class NeckSlotItemsTab {
 	22986: number | null = null
 }
 
-class RingSlotItemsTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class RingSlotItemsTab extends BankTab {
 	773: number | null = null
 	1635: number | null = null
 	1639: number | null = null
@@ -6214,9 +6163,7 @@ class RingSlotItemsTab {
 	22975: number | null = null
 }
 
-class ShieldSlotItemsTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class ShieldSlotItemsTab extends BankTab {
 	1171: number | null = null
 	1173: number | null = null
 	1175: number | null = null
@@ -6478,9 +6425,7 @@ class ShieldSlotItemsTab {
 	22441: number | null = null
 }
 
-class TwoHandedSlotItemsTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class TwoHandedSlotItemsTab extends BankTab {
 	839: number | null = null
 	841: number | null = null
 	843: number | null = null
@@ -6733,9 +6678,7 @@ class TwoHandedSlotItemsTab {
 	22610: number | null = null
 }
 
-class WeaponSlotItemsTab {
-	[index: number]: number | null
-	[index: string]: number | null
+class WeaponSlotItemsTab extends BankTab {
 	35: number | null = null
 	278: number | null = null
 	466: number | null = null
@@ -7578,6 +7521,7 @@ class WeaponSlotItemsTab {
 }
 
 export class TabbedBank {
+	[index: string]: BankTab
 	currency = new CurrencyTab()
 	food = new FoodTab()
 	'herblore items' = new HerbloreItemsTab()

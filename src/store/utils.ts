@@ -17,7 +17,7 @@ export function getOrCreatePlayerBank(): TabbedBank {
 	const loaded = localStorage.getItem('playerBank') || ''
 
 	let bank = new TabbedBank()
-	if (loaded) bank = JSON.parse(loaded)
+	if (loaded) bank = JSON.parse(loaded) as TabbedBank
 
 	return bank
 }
