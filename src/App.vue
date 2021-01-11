@@ -7,6 +7,7 @@
 				mode="horizontal"
 			>
 				<el-menu-item index="/">Home</el-menu-item>
+				<el-menu-item index="/quests">Quests</el-menu-item>
 				<el-submenu index="/bank">
 					<template #title>
 						Bank
