@@ -8,6 +8,9 @@
 		}
 	],
 	"settings": {
-		"conventionalCommits.scopes": ["Bank"]
+		"conventionalCommits.scopes": [
+			"Bank",
+			"Quests"
+		]
 	}
 }
